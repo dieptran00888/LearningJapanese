@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import {
+  Container, Content, Text,
+} from 'native-base';
 
 import levelSelectors from '~/domain/selectors/level';
+import { Actions } from 'react-native-router-flux';
 
 @connect(
   state => ({
@@ -14,7 +17,11 @@ import levelSelectors from '~/domain/selectors/level';
 export default class Level extends Component {
   render() {
     return (
-      <View></View>
+      <Container>
+        <Content>
+          <Text>Level Content</Text>
+        </Content>
+      </Container>
     );
   }
 }
