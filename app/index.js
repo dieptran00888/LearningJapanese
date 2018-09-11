@@ -33,17 +33,17 @@ export default class App extends Component<Props> {
         <PersistGate persistor={redux.persistor}>
           <Router>
             <Scene key='root' tabs={true}>
-              <Scene key={FLASHCARD_TAB_ITEM_KEY} title='ICON1' icon={TabIcon}>
-                <Scene key={KANJI_FLASHCARD_SCENE_KEY} component={Level} title='Level'/>
+              <Scene key={FLASHCARD_TAB_ITEM_KEY} title='Flashcard' icon={TabIcon} headerMode='none'>
+                <Scene key={KANJI_FLASHCARD_SCENE_KEY} component={Level}/>
               </Scene>
-              <Scene key={FAVORITE_TAB_ITEM_KEY} title='ICON2' icon={TabIcon}>
-                <Scene key={FAVORITE_SCENE_KEY} component={Favorite} title='Favorite'></Scene>
+              <Scene key={FAVORITE_TAB_ITEM_KEY} title='Favorites' icon={TabIcon} headerMode='none'>
+                <Scene key={FAVORITE_SCENE_KEY} component={Favorite}/>
               </Scene>
-              <Scene key={ALPHABET_TAB_ITEM_KEY} title='ICON3' icon={TabIcon}>
-                <Scene key={ALPHABET_SCENE_KEY} component={Alphabet} title='Alphabet' icon={TabIcon}></Scene>
+              <Scene key={ALPHABET_TAB_ITEM_KEY} title='Alphabet' icon={TabIcon} headerMode='none'>
+                <Scene key={ALPHABET_SCENE_KEY} component={Alphabet} icon={TabIcon}/>
               </Scene>
-              <Scene key={WORD_DETECTION_TAB_ITEM_KEY} title='ICON4' icon={TabIcon}>
-                <Scene key={WORD_DETECTION_SCENE_KEY} component={WordDetection} title='Word Detection' icon={TabIcon}></Scene>
+              <Scene key={WORD_DETECTION_TAB_ITEM_KEY} title='Draw' icon={TabIcon} headerMode='none'>
+                <Scene key={WORD_DETECTION_SCENE_KEY} component={WordDetection} icon={TabIcon}/>
               </Scene>
             </Scene>
           </Router>
