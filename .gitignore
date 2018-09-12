@@ -2,6 +2,12 @@
 #
 .DS_Store
 
+# Realm
+*.realm.lock
+*.management/
+*.realm
+vendor/realm-*
+
 # Xcode
 #
 Pods/

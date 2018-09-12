@@ -23,7 +23,7 @@
 			"outDir": "${workspaceRoot}/.vscode/.react",
 			"runArguments": [
 				"--simulator",
-				"iPhone 6"
+				"iPhone 7"
 			]
 		},
 		{

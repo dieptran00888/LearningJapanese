@@ -1,5 +1,5 @@
-export const getCurrentData = state => state.level.currentData;
+export const getLevels = state => state.level.levels;
 
 export default {
-  getCurrentData,
+  getLevels,
 };
