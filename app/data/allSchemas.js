@@ -16,7 +16,9 @@ const database = {
 // Level
 export const getLevels = () => new Promise((resolve, reject) => {
   Realm.open(database).then((realm) => {
-    const levels = realm.objects(LEVEL_SCHEMA).map(level => Object.assign({}, level));
+    const levels = realm.objects(LEVEL_SCHEMA)
+      .map(level => Object.assign({}, level))
+      .sort((a, b) => a.levelId < b.levelId);
     resolve(levels);
   }).catch((error) => {
     reject(error);
