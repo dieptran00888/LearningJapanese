@@ -7,3 +7,5 @@ export const KANJI_FLASHCARD_SCENE_KEY = 'kanjiFlashCard';
 export const FAVORITE_SCENE_KEY = 'favorite';
 export const WORD_DETECTION_SCENE_KEY = 'wordDetection';
 export const ALPHABET_SCENE_KEY = 'alphabet';
+
+export const LESSON_SCENE_KEY = 'lesson';

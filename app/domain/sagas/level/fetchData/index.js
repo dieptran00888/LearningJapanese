@@ -13,7 +13,7 @@ function* getLevelsFromDatabase() {
   return null;
 }
 
-export default function* (action) {
+export default function* () {
   try {
     const levels = yield call(getLevelsFromDatabase);
     yield delay(100);

@@ -14,12 +14,14 @@ import Level from '~/screens/Level';
 import {
   KANJI_FLASHCARD_SCENE_KEY, FAVORITE_SCENE_KEY, ALPHABET_SCENE_KEY, WORD_DETECTION_SCENE_KEY,
   FLASHCARD_TAB_ITEM_KEY, FAVORITE_TAB_ITEM_KEY, ALPHABET_TAB_ITEM_KEY, WORD_DETECTION_TAB_ITEM_KEY,
+  LESSON_SCENE_KEY,
 } from '~/configs/sceneKey';
 import { Router, Scene } from 'react-native-router-flux';
 import Favorite from '~/screens/Favorite';
 import Alphabet from '~/screens/Alphabet';
 import WordDetection from '~/screens/WordDetection';
 import { Text } from 'native-base';
+import Lesson from '~/screens/Level/Lesson';
 
 type Props = {};
 
@@ -35,6 +37,7 @@ export default class App extends Component<Props> {
             <Scene key='root' tabs={true}>
               <Scene key={FLASHCARD_TAB_ITEM_KEY} title='Flashcard' icon={TabIcon} headerMode='none'>
                 <Scene key={KANJI_FLASHCARD_SCENE_KEY} component={Level}/>
+                <Scene key={LESSON_SCENE_KEY} component={Lesson}/>
               </Scene>
               <Scene key={FAVORITE_TAB_ITEM_KEY} title='Favorites' icon={TabIcon} headerMode='none'>
                 <Scene key={FAVORITE_SCENE_KEY} component={Favorite}/>

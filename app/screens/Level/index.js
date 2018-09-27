@@ -6,12 +6,14 @@ import {
 import { FlatList, TouchableHighlight } from 'react-native';
 import levelSelectors from '~/domain/selectors/level';
 import { fetchData } from '~/domain/actions/level';
+import { getLessonsByLevel } from '~/domain/actions/lesson';
+import { Actions } from 'react-native-router-flux';
 
 @connect(
   state => ({
     levels: levelSelectors.getLevels(state),
   }),
-  { fetchData },
+  { fetchData, getLessonsByLevel },
 )
 
 export default class Level extends Component {
@@ -22,9 +24,21 @@ export default class Level extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header
+          iosBarStyle='light-content'
+          androidStatusBarColor='white'
+          style={{
+            backgroundColor: '#375a7f',
+          }}
+        >
           <Body>
-            <Title>Levels</Title>
+            <Title
+              style={{
+                color: 'white',
+              }}
+            >
+              Levels
+            </Title>
           </Body>
         </Header>
         <Content>
@@ -102,6 +116,7 @@ export default class Level extends Component {
   )
 
   onPress(item) {
-    console.log(item);
+    this.props.getLessonsByLevel({ levelId: item.levelId });
+    Actions.lesson();
   }
 }

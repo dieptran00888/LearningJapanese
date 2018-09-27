@@ -26,9 +26,12 @@ export const getLevels = () => new Promise((resolve, reject) => {
 });
 
 // Lessons
-export const getLessonsByLevel = levelId => new Promise((resolve, reject) => {
+export const getLessons = levelId => new Promise((resolve, reject) => {
   Realm.open(database).then((realm) => {
-    const lessons = realm.objects(LESSON_SCHEMA).filtered('levelId = $0', levelId).map(level => Object.assign({}, level));
+    const lessons = realm.objects(LESSON_SCHEMA)
+      .filtered('levelId == $0', levelId)
+      .map(lesson => Object.assign({}, lesson))
+      .sort((a, b) => a.lessonId > b.lessonId);
     resolve(lessons);
   }).catch((error) => {
     reject(error);
