@@ -100,7 +100,7 @@ export default class Level extends Component {
             style={{
               flex: 3,
               justifyContent: 'center',
-              borderBottomWidth: 1,
+              borderBottomWidth: !isLastCell ? 1 : 0,
               borderBottomColor: '#d9e6f2',
             }}
           >
