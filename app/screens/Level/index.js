@@ -8,6 +8,7 @@ import levelSelectors from '~/domain/selectors/level';
 import { fetchData } from '~/domain/actions/level';
 import { getLessonsByLevel } from '~/domain/actions/lesson';
 import { Actions } from 'react-native-router-flux';
+import { NAVIGATION_COLOR, CIRCLE_INLINE_LEVEL_COLOR, TOUCHABLE_COLOR } from '~/configs/appColor';
 
 @connect(
   state => ({
@@ -28,7 +29,7 @@ export default class Level extends Component {
           iosBarStyle='light-content'
           androidStatusBarColor='white'
           style={{
-            backgroundColor: '#375a7f',
+            backgroundColor: NAVIGATION_COLOR,
           }}
         >
           <Body>
@@ -65,7 +66,7 @@ export default class Level extends Component {
     const isLastCell = level.levelId === levels[levels.length - 1].levelId;
     return (
       <TouchableHighlight
-        underlayColor='#d9e6f2'
+        underlayColor={TOUCHABLE_COLOR}
         onPress={() => this.onPress(level)}
       >
         <View
@@ -88,11 +89,11 @@ export default class Level extends Component {
                 borderRadius: 50,
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderColor: '#375a7f',
+                borderColor: NAVIGATION_COLOR,
                 borderWidth: 3,
               }}
             >
-              <Text style={{ color: '#375a7f', fontWeight: '800', fontSize: 22 }}>N{level.levelId}</Text>
+              <Text style={{ color: NAVIGATION_COLOR, fontWeight: '800', fontSize: 22 }}>N{level.levelId}</Text>
             </View>
             {!isLastCell ? this.renderLineConnection() : null}
           </View>
@@ -101,7 +102,7 @@ export default class Level extends Component {
               flex: 3,
               justifyContent: 'center',
               borderBottomWidth: !isLastCell ? 1 : 0,
-              borderBottomColor: '#d9e6f2',
+              borderBottomColor: CIRCLE_INLINE_LEVEL_COLOR,
             }}
           >
             <Text style={{ margin: 10 }}>Description N{level.levelId}</Text>
@@ -112,7 +113,7 @@ export default class Level extends Component {
   }
 
   renderLineConnection = () => (
-    <View style={{ height: 40, backgroundColor: '#375a7f', width: 2 }} ></View>
+    <View style={{ height: 40, backgroundColor: NAVIGATION_COLOR, width: 2 }} ></View>
   )
 
   onPress(item) {
