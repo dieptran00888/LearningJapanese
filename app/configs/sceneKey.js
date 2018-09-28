@@ -10,4 +10,5 @@ export const WORD_DETECTION_SCENE_KEY = 'wordDetection';
 export const ALPHABET_SCENE_KEY = 'alphabet';
 export const SETTINGS_SCENE_KEY = 'settings';
 
+export const WORDS_SCENE_KEY = 'words';
 export const LESSON_SCENE_KEY = 'lesson';

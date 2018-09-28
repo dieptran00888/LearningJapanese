@@ -9,7 +9,9 @@ import {
 import lessonSelectors from '~/domain/selectors/lesson';
 import { Actions } from 'react-native-router-flux';
 import icons from '~/assets/images';
-import { NAVIGATION_COLOR, TOUCHABLE_COLOR, CIRCLE_TIMELINE_LEVEL_COLOR, CIRCLE_INLINE_LEVEL_COLOR } from '~/configs/appColor';
+import {
+  NAVIGATION_COLOR, TOUCHABLE_COLOR, CIRCLE_TIMELINE_LEVEL_COLOR, CIRCLE_INLINE_LEVEL_COLOR,
+} from '~/configs/appColor';
 
 @connect(
   state => ({
@@ -56,7 +58,7 @@ export default class Lesson extends Component {
               color: 'white',
             }}
           >
-            Lesson
+            {this.props.level.levelName}
           </Title>
         </Body>
         <Right/>
@@ -171,6 +173,6 @@ export default class Lesson extends Component {
   )
 
   onPress(lesson) {
-    console.log(lesson);
+    Actions.words({ lesson });
   }
 }

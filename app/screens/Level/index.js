@@ -118,6 +118,6 @@ export default class Level extends Component {
 
   onPress(item) {
     this.props.getLessonsByLevel({ levelId: item.levelId });
-    Actions.lesson();
+    Actions.lesson({ level: item });
   }
 }

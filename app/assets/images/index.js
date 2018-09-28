@@ -8,4 +8,6 @@ export default {
   settings: require('./settings.png'),
   speak: require('./speak.png'),
   test: require('./test.png'),
+  favorite: require('./favorite.png'),
+  listLayout: require('./tasks-list.png'),
 };
