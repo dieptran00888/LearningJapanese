@@ -39,5 +39,15 @@ export const getLessons = levelId => new Promise((resolve, reject) => {
 });
 
 // Words
+export const getWords = (levelId, lessonId) => new Promise((resolve, reject) => {
+  Realm.open(database).then((realm) => {
+    const words = realm.objects(KANJI_WORD_SCHEMA)
+      .filtered('levelId == $0 && lessonId == $1', levelId, lessonId)
+      .map(word => Object.assign({}, word));
+    resolve(words);
+  }).catch((error) => {
+    reject(error);
+  });
+});
 
 export default new Realm(database);
